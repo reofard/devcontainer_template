@@ -1,10 +1,13 @@
 {
     "name": "Bazel C++ DevContainer",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/devcontainers-community/features/bazel:1": {}
+        "ghcr.io/devcontainers-community/features/bazel:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/apt-build-essential:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/cmake.org:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/clang-format:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/clang-tidy:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/sourceware.org-gdb:1": {}
     },
     "runArgs": [
         "--security-opt",
@@ -12,10 +15,6 @@
         "--userns=host",
         "--hostname=cpp-bazel-dev"
     ],
-    "mounts": [
-        "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,readonly"
-    ],
-    "remoteUser": "root",
     "customizations": {
         "vscode": {
             "extensions": [

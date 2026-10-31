@@ -6,3 +6,5 @@ build --ui_actions_shown=20
 
 build:debug --compilation_mode=dbg
 build:debug --strip=never
+
+startup --output_user_root=/home/vscode/.cache/bazel
